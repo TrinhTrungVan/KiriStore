@@ -1,11 +1,11 @@
-import {NextApiRequest, NextApiResponse} from 'next'
 import querystring from 'query-string'
 import crypto from 'crypto'
-import {NextResponse} from 'next/server'
+import {NextRequest, NextResponse} from 'next/server'
 import {sortedObject} from '@/lib/utils'
 
-export async function GET(req: NextApiRequest) {
-  let vnp_Params = req.query
+export async function GET(req: NextRequest) {
+  const urlSearchParams = new URLSearchParams(req.url)
+  let vnp_Params = Object.fromEntries(urlSearchParams.entries())
 
   const secureHash = vnp_Params['vnp_SecureHash']
 
