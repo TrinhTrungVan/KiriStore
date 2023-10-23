@@ -33,11 +33,11 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import {Checkbox} from '@/components/ui/checkbox'
-import {Product} from '@/types'
 import {Textarea} from '@/components/ui/textarea'
+import {SafeProduct} from '@/types'
 
 interface ProductFormProps {
-  initialData: Product | null
+  initialData: SafeProduct | null
   categories: Category[]
   sizes: Size[]
   colors: Color[]
