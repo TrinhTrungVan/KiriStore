@@ -37,32 +37,32 @@ const MainNav = () => {
     router.push(url)
   }
 
-  if (pathname !== '/') {
-    return null
+  if (pathname == '/' || pathname === '/search') {
+    return (
+      <nav className="flex w-full max-w-[500px] space-x-4 mx-4 md:ml-[60px]">
+        <MobileFilters />
+        <form
+          className="hidden md:flex lg:flex w-full items-center"
+          onSubmit={handleSubmit}>
+          <div className="flex flex-1 flex-row items-center justify-between overflow-hidden rounded-full p-1 transition border border-neutral-300 hover:border-neutral-500 focus-within:border-neutral-500">
+            <input
+              className="w-full border-none outline-none px-4 py-2 font-medium"
+              type="text"
+              placeholder="Enter the name..."
+              value={searchValue}
+              onChange={handleChange}
+            />
+            <Button size="icon" className="rounded-full shrink-0">
+              <Search size={20} />
+            </Button>
+          </div>
+          <button type="submit"></button>
+        </form>
+      </nav>
+    )
   }
 
-  return (
-    <nav className="flex w-full max-w-[500px] space-x-4 mx-4 md:ml-[60px]">
-      <MobileFilters />
-      <form
-        className="hidden md:flex lg:flex w-full items-center"
-        onSubmit={handleSubmit}>
-        <div className="flex flex-1 flex-row items-center justify-between overflow-hidden rounded-full p-1 transition border border-neutral-300 hover:border-neutral-500 focus-within:border-neutral-500">
-          <input
-            className="w-full border-none outline-none px-4 py-2 font-medium"
-            type="text"
-            placeholder="Enter the name..."
-            value={searchValue}
-            onChange={handleChange}
-          />
-          <Button size="icon" className="rounded-full shrink-0">
-            <Search size={20} />
-          </Button>
-        </div>
-        <button type="submit"></button>
-      </form>
-    </nav>
-  )
+  return null
 }
 
 export default MainNav

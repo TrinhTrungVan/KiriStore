@@ -9,8 +9,8 @@ import ModalProvider from '@/components/providers/modal-provider'
 const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
-  title: 'KiriShop',
-  description: 'KiriShop',
+  title: 'KiriStore',
+  description: 'KiriStore',
 }
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

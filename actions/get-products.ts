@@ -40,6 +40,7 @@ const getProducts = async (params: IProductParams) => {
     if (name) {
       query.name = {
         contains: name,
+        mode: 'insensitive',
       }
     }
 
